@@ -3,7 +3,7 @@
         <meta charset="utf-8"</meta>
     </head>
     <body>
-        <table>
+        <table class="table table-bordered">
             <thead>
                 <th>Produtos</th>
                 <th>Descricao</th>
@@ -11,8 +11,7 @@
                 <th>Quantidade</th>
             </thead>
             <tbody>
-                <% listaProduto = Produto.order :nome %>
-                <% listaProduto.each do |produto| %>
+                <% @listaProduto.each do |produto| %>
                 <tr>
                     <td><%= produto.nome %></td>
                     <td><%= produto.descricao %></td>
