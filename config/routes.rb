@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   
   #Pagina PRODUTO
   get "/produtos/novo" => "produtos#cadastro"
+  get "produtos/:id/remove" => "produtos#destroy"
   post "/produtos" => "produtos#create"
 
 end

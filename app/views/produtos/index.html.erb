@@ -1,17 +1,11 @@
-<html>
-    <head>
-        <meta charset="utf-8"</meta>
-    </head>
-    <body>
-
-        <%= nav_bar brand:"Produtos", brand_link:root_url %>
-
+<div class="container">
         <table class="table table-bordered">
             <thead>
-                <th>Produtos</th>
+                <th>Nome</th>
                 <th>Descricao</th>
                 <th>Preço</th>
                 <th>Quantidade</th>
+                <th>Remover</th>
             </thead>
             <tbody>
                 <% @listaProduto.each do |produto| %>
@@ -20,9 +14,9 @@
                     <td><%= produto.descricao %></td>
                     <td><%= produto.preco %></td>
                     <td><%= produto.quantidade_estoque %></td>
+                    <td><a href="/produtos/<%= produto.id %>/remove">Excluir</a></td>
                 </tr>
                 <% end %>
             </tbody>
         </table>
-</body>
-</html>
+</div>
