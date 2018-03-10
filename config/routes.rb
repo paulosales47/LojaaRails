@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root "produtos#index"
   
   #Pagina PRODUTO
-  get "/produtos/novo" => "produtos#cadastro"
-  get "produtos/:id/remove" => "produtos#destroy"
+  get "/produtos/new" => "produtos#cadastro"
+  delete "produtos/:id" => "produtos#destroy", as: :produto
   post "/produtos" => "produtos#create"
 
 end
