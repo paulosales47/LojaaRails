@@ -1,7 +1,14 @@
 <div class="row">
     <h2>Cadastro de Produtos</h2>
 </div>
-<%= form_for Produto.new do |f| %>
+
+<% @produto.errors.full_messages.each do |message|%>
+    <div class="alert alert-danger" role="alert">
+        <%=message%>
+    </div>
+<% end %>
+
+<%= form_for @produto do |f| %>
     <div class=row>
         <div class=form-group>
             <div class=col-sm-12>
