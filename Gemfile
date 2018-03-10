@@ -16,6 +16,10 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 #Bootstrap
 gem 'twitter-bootstrap-rails'
+#Locale data for Ruby on Rails
+gem 'rails-i18n', '~> 5.1'
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
