@@ -1,0 +1,54 @@
+<div class="row">
+    <h2><%= label_tag texto_acao %></h2>
+</div>
+
+<% @produto.errors.full_messages.each do |message|%>
+    <div class="alert alert-danger" role="alert">
+        <%=message%>
+    </div>
+<% end %>
+
+<%= form_for @produto do |f| %>
+    <div class=row>
+        <div class=form-group>
+            <div class=col-sm-6>
+                <%= f.label :nome %>
+                <%= f.text_field :nome, class: 'form-control' %>
+            </div>
+            <div class=col-sm-6>
+                <%= f.label :departamento %>
+                <%= f.collection_select :departamento_id, @departamentos, :id, :nome, {}, class: "form-control" %>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class=form-group>
+            <div class=col-sm-12>
+                <%= f.label :descricao %>
+                <%= f.text_area :descricao, class: 'form-control', rows: 4 %>
+            </div>
+        </div>
+    </div>
+    <div class="row"> 
+        <div class=form-group>
+            <div class="col-sm-6">
+                <%= f.label :quantidade_estoque %>
+                <%= f.number_field :quantidade_estoque, step: 1, class: 'form-control' %>
+            </div>
+            
+            <div class="col-sm-6">
+                <%= f.label :preco%>
+                <%= f.number_field :preco, class: 'form-control' %>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top:15px;">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <%= f.submit texto_acao, class: 'btn btn-primary'%>
+            </div>
+        </div>
+    </div>
+
+
+<% end %>
