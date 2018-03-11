@@ -11,9 +11,13 @@
 <%= form_for @produto do |f| %>
     <div class=row>
         <div class=form-group>
-            <div class=col-sm-12>
+            <div class=col-sm-6>
                 <%= f.label :nome %>
                 <%= f.text_field :nome, class: 'form-control' %>
+            </div>
+            <div class=col-sm-6>
+                <%= f.label :departamento %>
+                <%= f.collection_select :departamento_id, @departamentos, :id, :nome, {}, class: "form-control" %>
             </div>
         </div>
     </div>
@@ -45,4 +49,6 @@
             </div>
         </div>
     </div>
+
+
 <% end %>
